@@ -1,4 +1,4 @@
 <div>
   <app-todo-input (addTodo)="addTodo($event)"></app-todo-input>
-  <list [list]="todoList" (changeStatus)="changeStatus($event)"> </list>
+  <list [list]="todoList" (changeStatus)="changeStatus($event)" (deleteTodo)="deleteTodo($event)"> </list>
 </div>

@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ListComponent implements OnInit {
   @Input() list: any[]
   @Output() changeStatus:EventEmitter<any> = new EventEmitter<any>();
+  @Output() deleteTodo:EventEmitter<any> = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit() {
@@ -15,6 +16,10 @@ export class ListComponent implements OnInit {
 
   onStatusChange(event, index) {
     this.changeStatus.emit(index)
+  }
+
+  onDeleteTodo(event, index) {
+    this.deleteTodo.emit(index)
   }
 
 }

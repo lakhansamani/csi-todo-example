@@ -36,4 +36,8 @@ export class TodoComponent implements OnInit {
     this.todoList[index].status = !this.todoList[index].status
   }
 
+  deleteTodo(index) {
+    this.todoList.splice(index, 1)
+  }
+
 }
