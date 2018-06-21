@@ -1,0 +1,6 @@
+<li *ngFor="let item of list; let i = index" class="list">
+  <label>
+    <input type="checkbox" (change)="onStatusChange($event, i)">
+    <span [ngClass] = "{'doneTask': item.status}"> {{ item.title }} </span>
+  </label>
+</li>

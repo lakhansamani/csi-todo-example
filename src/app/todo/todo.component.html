@@ -1,3 +1,4 @@
-<p>
-  todo app works!
-</p>
+<div>
+  <app-todo-input (addTodo)="addTodo($event)"></app-todo-input>
+  <list [list]="todoList" (changeStatus)="changeStatus($event)"> </list>
+</div>
