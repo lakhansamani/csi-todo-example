@@ -1,3 +1,8 @@
-<a routerLink = "/">Home</a> &nbsp;&nbsp; <a routerLink = "todo">Tdod App</a>
+<img src="https://angular.io/assets/images/logos/angular/angular.png" />
+<div class="menu">
+  <a class="menu-item" routerLink="/" routerLinkActive="active-menu" [routerLinkActiveOptions]="{exact:
+    true}">Home</a>
+  <a class="menu-item" routerLink="todo" routerLinkActive="active-menu" >Tdod App</a>
+</div>
 <router-outlet></router-outlet>
 

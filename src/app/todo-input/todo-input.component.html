@@ -1,3 +1,5 @@
-<input type="text" placeholder="Add new todo" [(ngModel)]="todoTitle" (keydown)="onKeydown($event)"/>
-<button (click)="onClick()">Add</button>
-<span *ngIf="todoTitle.length > 0">(You are entering: {{todoTitle}})</span>
+<div class="input-wrapper">
+  <input type="text" placeholder="Add new todo" [(ngModel)]="todoTitle" (keydown)="onKeydown($event)"/>
+  <span (click)="onClick()" class="add-button">+</span>
+  <div *ngIf="todoTitle.length > 0" class="input-data">(You are entering: {{todoTitle}})</div>
+</div>

@@ -1,4 +1,125 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   font-family: sans-serif;
+  background: linear-gradient(145deg,#0d47a1,#42a5f5);
+  color: #fff;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+input {
+  outline: none;
+  padding: 15px;
+  font-weight: 200;
+  font-size: 18px;
+  border-radius: 5px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #dfdfdf;
+  min-width: 400px;
+}
+
+app-root {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.menu-item {
+  border-right: 1px solid #dfdfdf;
+  padding: 10px 20px;
+  text-decoration-line: none;
+  color: #fff;
+}
+
+.menu-item:last-child {
+  border-right: 0;
+}
+
+.active-menu {
+  background: #fff;
+  color: #000;
+}
+
+app-todo-input {
+  margin-bottom: 20px;
+}
+
+.item-list {
+  margin-top: 20px;
+  background:white;
+  border-radius:5px;
+}
+
+.item {
+  display:flex;
+  align-items:center;
+  color: #000;
+  border-bottom: 1px solid #F1F1F1;
+}
+.item:last-child {
+  border-bottom:0;
+}
+input:checked + p {
+  background:#F9F9F9;
+  text-decoration: line-through;
+}
+input[type="checkbox"] {
+  margin:20px;
+}
+p {
+  margin:0;
+  padding:15px;
+  transition:background 0.2s;
+  flex:1;
+  font-family:'helvetica neue';
+  font-weight: 200;
+  border-left: 1px solid #D1E2FF;
+}
+
+button {
+  background: #fdfdfd;
+  padding: 10px 20px;
+  outline: none;
+  border-radius: 5px;
+  min-width: 50px;
+  cursor: pointer;
+}
+
+.deletebutton {
+  background-color: red;
+  color: #fff;
+  border: 0;
+  margin-right: 10px;
+}
+
+.input-data {
+  font-size: 14px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.add-button {
+  color: #000;
+  font-size: 20px;
+  padding: 5px;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  cursor: pointer;
 }
