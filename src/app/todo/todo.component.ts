@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from "./todo";
-
-const TODOS: Todo[] = [
-  { id: 1, title: 'Learn JS', status: false },
-  { id: 2, title: 'Have coffee', status: false },
-  { id: 3, title: 'Watch Football World cup', status: false },
-];
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo',
@@ -14,30 +9,30 @@ const TODOS: Todo[] = [
 })
 export class TodoComponent implements OnInit {
 
-  todoList:Todo[]
-
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
-    this.todoList = TODOS
+    this.todoService.getAllTodos()
+  }
+
+  get todos() {
+    return this.todoService.getAllTodos();
   }
 
   addTodo(title) {
-    console.log('called function')
-    const id = this.todoList.length + 1;
-    this.todoList.push({
-      id,
+    this.todoService.addTodo({
+      id: Date.now(),
       title,
-      status: false,
+      status: false
     })
   }
 
   changeStatus(index) {
-    this.todoList[index].status = !this.todoList[index].status
+    this.todoService.changeStatus(index)
   }
 
   deleteTodo(index) {
-    this.todoList.splice(index, 1)
+    this.todoService.deleteTodo(index)
   }
 
 }
