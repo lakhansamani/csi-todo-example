@@ -13,10 +13,20 @@ export class TodoInputComponent implements OnInit {
   ngOnInit() {
   }
 
-  onClick() {
+  emitAddTodo() {
     if (this.todoTitle.length) {
       this.addTodo.emit(this.todoTitle)
       this.todoTitle = ''
+    }
+  }
+
+  onClick() {
+    this.emitAddTodo()
+  }
+
+  onKeydown(e) {
+    if (e.keyCode === 13) {
+      this.emitAddTodo()
     }
   }
 

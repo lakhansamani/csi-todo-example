@@ -1,31 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './todo/todo'
+import { Http } from '@angular/http';
+import { Observable, of } from 'rxjs';
+import { Todo } from './todo/todo';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
 
-  todos: Todo[] = []
-  constructor() { }
+  todos: Todo[] = [{
+    "id": 1529656330215,
+    "title": "Learn Angular JS",
+    "completed": false
+  }]
+  constructor(private http: Http) { }
 
-  getAllTodos(): Todo[] {
-    return this.todos
-  }
-
-  addTodo(todo: Todo) {
-    this.todos = [...this.todos, todo]
-  }
-
-  changeStatus(index: number) {
-    const currentTodos = [ ...this.todos ]
-    currentTodos[index].status = !currentTodos[index].status
-    this.todos = currentTodos
-  }
-
-  deleteTodo(index: number) {
-    const currentTodos = [ ...this.todos ]
-    currentTodos.splice(index, 1)
-    this.todos = currentTodos
+  getAllTodos(): Observable<any> {
+    return this.http.get('assets/todo.json')
+    .pipe(map(res => res.json()))
   }
 }

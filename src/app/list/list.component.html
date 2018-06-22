@@ -1,7 +1,7 @@
 <li *ngFor="let item of list; let i = index" class="list">
   <label>
     <input type="checkbox" (change)="onStatusChange($event, i)">
-    <span [ngClass] = "{'doneTask': item.status}"> {{ item.title }} </span>
+    <span [ngClass] = "{'doneTask': item.completed}"> {{ item.title }} </span>
     <button (click)="onDeleteTodo($event, i)"> delete </button>
   </label>
 </li>
